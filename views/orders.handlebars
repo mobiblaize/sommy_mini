@@ -1,0 +1,35 @@
+<section class="section-admin">
+    <h2>Orders</h2>
+    <div class="search">
+        <form action="/admin/orders/search" class="search-form">
+        <div class="row">
+            <div class="col search-bar span-3-of-4">
+                <input type="search" name="term" placeholder="Type customers name" value={{term}}>
+            </div>
+            <div class="col search-button span-1-of-6">
+                <input type="submit" value="Search">
+            </div>
+        </div>
+        
+        </form>
+    </div>
+    {{#each orders}}
+        <div class="row">
+        <div class="messages">
+            <h3> <span>{{name}}</span></h3>
+            <p>Email: <span>{{email}}</span></p>
+            <p>Phone: {{phone}}</p>
+            <p>Location: {{location}}</p>
+            <p>Pastry: {{pastry}}</p>
+            <p>Size: {{size}}</p>
+            <p>Description: {{description}}</p>
+            <div class="info">Delivery-date: {{date}}</div>
+            <a class="btn btn-full">Delivered: {{delivered}}</a>
+        </div>
+    </div>
+
+    {{else}}
+    <P class="long-copy">No Orders yet</P>
+    {{/each}}
+    
+</section>

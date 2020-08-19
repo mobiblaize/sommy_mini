@@ -1,0 +1,154 @@
+<section class="section-features js--section-features">
+    <div class="row">
+        <h2>Welcome to Sommy's catering demo</h2>
+        <p class="long-copy">We're dedicated to the principle of small top quality neighborhood products. You'll see it in our extravagant cake and breakfast pastries collection. You'll taste the attention we give to our organic ingredients in bringing you a heart warming final delicacy.</p>
+    </div>
+    <div class="row">
+        <div class="col span-1-of-2 box about-box">
+            <div>
+                <i class="ion-ios-cart-outline icon-big"></i>
+                <h3>Place your order</h3>
+                <p>
+                Check out our gallery of pastries, place your order for one of our product and you won't be dissapointed. We only make the best.
+                </p>
+            </div>
+        </div>
+        <div class="col span-1-of-2 box about-box">
+            <div>
+                <i class="ion-ios-book-outline icon-big"></i>
+                <h3>Learn the steps</h3>
+                <p>
+                    Apply for our master course and learn the secret recipes for making various kinds of cakes, meat-pies, egg-rolls and other pastries.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-testimonials">
+    <div class="row"><h2>Our customers can't live without us</h2></div>
+    <div class="row">
+        <blockquote>
+            Sommy's catering is just so incomparable, I decided to give sommy's catering a trial for my birthday, I placed on order for my cake and in no distant time, my cake was delivered to me. The cake turned out to be even more sumptous than I expected and all of my friends really testified to its great taste.
+            <cite>Neche</cite>
+        </blockquote>
+    </div>
+</section>
+
+<section class="section-form js--place-order">
+    <div class="row">
+        <h2>Place an order for our delicacies</h2>
+        <p class="long-copy">
+            After placing your order, please endeavour to contact us via one of the channels listed below for price negotiation and payment.
+        </p>
+    </div>
+    <div class="contact-form">
+        <ul class="contacts">
+            <li><div><a href='#'><i class="ion-social-whatsapp"></i></a>: +2348123456789</div></li>
+            <li><div><a href='#'><i class="ion-social-googleplus"></i></a>: Sommyscatering@gmail.com</div></li>
+        </ul>
+    </div>
+        <form method="POST" action="/order" class='contact-form'>
+            
+            {{#each errors}}
+                <div class="row">
+                    <div class="col span-1-of-3"></div>
+                    <div class="col span-2-of-3">
+                        <p>{{text}}</p>
+                    </div>
+                </div>
+            {{/each}}
+            
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <label for="name">Name</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <input type="text" name="name" id="name" placeholder="Your name" required value={{name}}>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <label for="phone">Phone</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <input type="tel" name="phone" id="phone" placeholder="Your Phone no" required value={{phone}}>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <label for="email">Email</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <input type="email" name="email" id="email" placeholder="Your email" value={{email}}>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <label for="name">Location</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <input type="text" name="location" id="location" placeholder="Your location" required value={{location}}>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <label for="pastry-type">Type of pastry</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <select name="pastry" id="pastry-type">
+                        <option value="cake" selected>Cake</option>
+                        <option value="meat-pie">Meat-pie</option>
+                        <option value="samosa">Samosa</option>
+                        <option value="puff-puff">Puff-puff</option>
+                        <option value="chin-chin">Chin-chin</option>
+                        <option value="peanuts">Peanuts</option>
+                        <option value="pizza">Pizza</option>
+                        <option value="butter-cookies">Butter-cookies</option>
+                        <option value="bread-pizza">Bread-pizza</option>
+                        <option value="bread">Bread</option>
+                        <option value="pop-corn">Pop corn</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col span-1-of-3">
+                        <label>Size</label>
+                    </div>
+                    <div class="col span-2-of-3">
+                        <select name="size" id="size">
+                            <option value="mini">Mini</option>
+                            <option value="small">Small</option>
+                            <option value="regular" selected>Regular</option>
+                            <option value="large">Large</option>
+                            <option value="extra-large">Extra-large</option>
+                        </select>
+                    </div>
+                </div>
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <label>Other description</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <textarea name="description" placeholder="Your message">{{description}}</textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <label for="date">Delivery date</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <input type="date" name="date" id="date" required value={{date}}>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <label>&nbsp;</label>
+                </div>
+                <div class="col span-2-of-3">
+                    <input class="js--wp-1" type="submit" value="Order now!">
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
