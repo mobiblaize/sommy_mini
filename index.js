@@ -1,5 +1,5 @@
 if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').config();
+    require('dotenv');
 }
 
 const express = require('express');
@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(flash());
 app.use(session({
-    secret: '2b170580c54b85f7a5bf8693bf3d5743e0469d6c738dd7606ebdcdd524bb013056f66eee28504c64211959cc8e86fd939d059067f766666755d38821f40aba0b',
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false
 }));
