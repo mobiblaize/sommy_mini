@@ -3,13 +3,13 @@ const router = express.Router();
 const Order = require('../models/Order');
 const Contact = require('../models/Contact');
 
-router.get('/', (req, res) => res.render('index', { layout: 'landing'}));
+router.get('/', (req, res) => res.render('index', { layout: 'landing', title: "Sommy's Catering"}));
 
-router.get('/gallery', (req, res) => res.render('gallery'));
+router.get('/gallery', (req, res) => res.render('gallery', { title: 'Products Gallery'}));
 
-router.get('/master', (req, res) => res.render('master'));
+router.get('/master', (req, res) => res.render('master', { title: 'Master Course'}));
 
-router.get('/contact', (req, res) => res.render('contact'));
+router.get('/contact', (req, res) => res.render('contact', { title: 'Contact Us'}));
 
 router.post('/order', (req, res) => {
 

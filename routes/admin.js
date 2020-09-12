@@ -13,7 +13,7 @@ initialilizePassport(passport);
 
 // router.get('/', (req, res) => res.render('admin', { layout: 'alpha', name: req.user.name}));
 router.get('/', checkAuthenticated, (req, res) => {
-    res.render('admin', { layout: 'alpha', name: req.user.name})
+    res.render('admin', { layout: 'alpha', name: req.user.name, title: 'Back Office'})
 } );
 
 router.get('/login', checkNotAuthenticated, (req, res) => res.render('login', { layout: false}));
@@ -52,14 +52,14 @@ router.post('/register', checkAuthenticated, async (req, res) => {
 router.get('/orders', checkAuthenticated, (req, res) => 
     Order.findAll()
         .then(orders => {
-            res.render('orders', { layout: 'alpha', orders});
+            res.render('orders', { layout: 'alpha', orders, title: 'Orders'});
         })
         .catch(err => console.log(err)));
 
 //Get Message list
 router.get('/messages', checkAuthenticated, (req, res) => 
     Contact.findAll()
-        .then(contacts => res.render('messages', { layout: 'alpha', contacts }))
+        .then(contacts => res.render('messages', { layout: 'alpha', contacts, title: 'Messages' }))
         .catch(err => console.log(err)));
 
 router.get('/orders/search', checkAuthenticated, (req, res) => {
